@@ -1,5 +1,4 @@
 target/
-!.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated
@@ -30,7 +29,7 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
-# Locally stored "Eclipse launch configurations"
+# Locally stored Eclipse launch configurations
 *.launch
 
 # PyDev specific (Python IDE for Eclipse)
@@ -148,7 +147,7 @@ ehthumbs_vista.db
 [Dd]esktop.ini
 
 # Recycle Bin used on file shares
-$RECYCLE.BIN/
+.BIN/
 
 # Windows Installer files
 *.cab
