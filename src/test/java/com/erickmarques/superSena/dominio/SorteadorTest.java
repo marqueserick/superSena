@@ -1,7 +1,9 @@
 package com.erickmarques.superSena.dominio;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,11 +23,16 @@ public class SorteadorTest {
 		sorteados = jogarMegaSena(8);
 		Integer[] numeros = sorteados.toArray(new Integer[0]);
 
-		for (int i = 0; i < (sorteados.size()-1); i++) {
-			for (int j=i+1; j < sorteados.size(); j++) {
+		for (int i = 0; i < (sorteados.size() - 1); i++) {
+			for (int j = i + 1; j < sorteados.size(); j++) {
 				assertNotEquals(numeros[i], numeros[j]);
 			}
 		}
+	}
+
+	@Test
+	void deveDarErroAoPedirMaisDe15Numeros() {
+		assertThrows(RuntimeException.class, () -> jogarMegaSena(16));
 	}
 
 }

@@ -17,11 +17,12 @@ public class Sorteador {
 
 		Random rd = new Random();
 		Set<Integer> sorteados = new HashSet<Integer>();
-		int sort, contador = 0;
+		int sorteado, contador = 0;
 
 		while (contador < quantidadeNumeros) {
-			sort = rd.nextInt(NUMERO_MAXIMO) + 1;
-			if (sorteados.add(sort)) {
+			// o rd.nextInt sorteará um numero entre 0 e 59, ao add 1, o numero sorteado irá de 1 a 60
+			sorteado = rd.nextInt(NUMERO_MAXIMO) + 1;
+			if (sorteados.add(sorteado)) {
 				contador++;
 			}
 		}

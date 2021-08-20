@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static com.erickmarques.superSena.dominio.Sorteador.jogarMegaSena;
 
-public class SuperSena {
+public class Main {
 
 	private static Scanner s;
 
@@ -16,9 +16,11 @@ public class SuperSena {
 			s = new Scanner(System.in);
 			System.out.println("Quantos jogos você deseja criar?");
 			quantidadeSorteios = s.nextInt();
+
 			if (quantidadeSorteios < 1) {
 				throw new InputMismatchException();
 			}
+
 			System.out.println("Quantos números você deseja em seus jogos?");
 			quantidadeNumeros = s.nextInt();
 		} catch (InputMismatchException e) {
@@ -34,9 +36,8 @@ public class SuperSena {
 				System.out.println("Jogo nº" + (i + 1) + " " + jogarMegaSena(quantidadeNumeros));
 			}
 		} catch (RuntimeException e) {
-			System.out.println(
-					"Você deve escolher entre 6 e 15 números em seus jogos"
-					+ "\nVamos sortear " + quantidadeSorteios + " jogo(s) com 6 números");
+			System.out.println("Você deve escolher entre 6 e 15 números em seus jogos" + "\nVamos sortear "
+					+ quantidadeSorteios + " jogo(s) com 6 números");
 			quantidadeNumeros = 6;
 			for (int i = 0; i < quantidadeSorteios; i++) {
 				System.out.println("Jogo nº" + (i + 1) + " " + jogarMegaSena(quantidadeNumeros));
